@@ -4,31 +4,28 @@ Este diagrama muestra la interacción entre el usuario y el sistema principal, a
 
 # 🧩 Diagrama C1 - Contexto del Sistema
 
-Este diagrama de contexto representa la visión de alto nivel del sistema **“Gestor de Finanzas Personales Asistido por IA”**, mostrando los actores principales, los sistemas involucrados y las interacciones clave entre ellos.
-
----
+Este diagrama representa la visión de alto nivel del sistema **Gestor de Finanzas Personales Asistido por IA**, mostrando los actores principales, los sistemas involucrados y las interacciones clave.
 
 ```mermaid
 graph LR
     %% ==== Elementos ====
-    U["👤<br/>Usuario de Finanzas Personales<br/><br/>Persona que interactúa con la aplicación<br/><br/>[Person]"]
-    S["📱<br/>Sistema Principal<br/><br/>Aplicación móvil desarrollada en Flutter<br/><br/>[Software System]"]
-    FB["🔥<br/>Firebase<br/><br/>Servicio externo para base de datos y autenticación<br/><br/>[Software System]"]
-    GEMINI["🤖<br/>Google Gemini API<br/><br/>Servicio externo de inteligencia artificial<br/><br/>[Software System]"]
+    U["👤 Usuario de Finanzas Personales\n[Person]"]
+    S["📱 Sistema Principal\nAplicación móvil desarrollada en Flutter\n[Software System]"]
+    FB["🔥 Firebase\nServicio externo para base de datos y autenticación\n[Software System]"]
+    GEMINI["🤖 Google Gemini API\nServicio externo de inteligencia artificial\n[Software System]"]
 
     %% ==== Relaciones ====
-    U -->|"Registra transacciones,<br/>visualiza reportes y recibe recomendaciones"| S
-    S -->|"Almacena datos financieros<br/>y realiza autenticación de usuarios"| FB
-    S -->|"Clasifica transacciones<br/>y genera insights personalizados"| GEMINI
+    U -->|"Registra transacciones,\nvisualiza reportes y recibe recomendaciones"| S
+    S -->|"Almacena datos financieros\ny realiza autenticación de usuarios"| FB
+    S -->|"Clasifica transacciones\ny genera insights personalizados"| GEMINI
 
-    %% ==== Estilos visuales (basado en Structurizr DSL) ====
-    classDef person fill:#f4b400,stroke:#f4b400,stroke-width:6px,color:#000000,font-weight:bold
-    classDef system fill:#ffffff,stroke:#007acc,stroke-width:6px,color:#007acc,font-weight:bold
+    %% ==== Estilos visuales (compatibles con GitHub) ====
+    classDef person fill:#f4b400,stroke:#f4b400,stroke-width:3px,color:#000000,font-weight:bold
+    classDef system fill:#ffffff,stroke:#007acc,stroke-width:3px,color:#007acc,font-weight:bold
 
     %% ==== Asignación de estilos ====
     class U person
     class S,FB,GEMINI system
-
 
 ## Descripción
 
