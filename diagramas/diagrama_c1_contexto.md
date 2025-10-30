@@ -2,30 +2,24 @@
 
 Este diagrama muestra la interacción entre el usuario y el sistema principal, así como las dependencias externas.
 
-# 🧩 Diagrama C1 - Contexto del Sistema
-
-Este diagrama representa la visión de alto nivel del sistema **Gestor de Finanzas Personales Asistido por IA**, mostrando los actores principales, los sistemas involucrados y las interacciones clave.
+# Diagrama de Contexto (C1) - Gestor de Finanzas Personales
 
 ```mermaid
-graph LR
-    %% ==== Elementos ====
-    U["👤 Usuario de Finanzas Personales\n[Person]"]
-    S["📱 Sistema Principal\nAplicación móvil desarrollada en Flutter\n[Software System]"]
-    FB["🔥 Firebase\nServicio externo para base de datos y autenticación\n[Software System]"]
-    GEMINI["🤖 Google Gemini API\nServicio externo de inteligencia artificial\n[Software System]"]
+flowchart LR
+    %% Nodos
+    U[Usuario de Finanzas Personales]:::person
+    S[Sistema Principal: App Flutter]:::software
+    FB[Firebase: Base de datos y autenticación]:::software
+    GEMINI[Google Gemini API: IA]:::software
 
-    %% ==== Relaciones ====
-    U -->|"Registra transacciones,\nvisualiza reportes y recibe recomendaciones"| S
-    S -->|"Almacena datos financieros\ny realiza autenticación de usuarios"| FB
-    S -->|"Clasifica transacciones\ny genera insights personalizados"| GEMINI
+    %% Relaciones
+    U -->|Registra transacciones, visualiza reportes y recibe recomendaciones| S
+    S -->|Almacena datos financieros y realiza autenticación| FB
+    S -->|Clasifica transacciones y genera insights| GEMINI
 
-    %% ==== Estilos visuales (compatibles con GitHub) ====
-    classDef person fill:#f4b400,stroke:#f4b400,stroke-width:3px,color:#000000,font-weight:bold
-    classDef system fill:#ffffff,stroke:#007acc,stroke-width:3px,color:#007acc,font-weight:bold
-
-    %% ==== Asignación de estilos ====
-    class U person
-    class S,FB,GEMINI system
+    %% Estilos simples
+    classDef person fill:#f4b400,stroke:#000,stroke-width:2px;
+    classDef software fill:#ffffff,stroke:#007acc,stroke-width:2px;
 
 ## Descripción
 
