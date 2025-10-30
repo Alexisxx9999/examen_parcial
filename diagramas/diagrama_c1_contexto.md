@@ -4,26 +4,24 @@ Este diagrama muestra la interacción entre el usuario y el sistema principal, a
 
 graph LR
     %% ==== Elementos ====
-    Usuario["👤<br/>Usuario de Finanzas Personales<br/><br/>Persona que interactúa con la aplicación<br/><br/>[Person]"]
-    Sistema["📱<br/>Sistema Principal<br/><br/>Aplicación móvil desarrollada en Flutter<br/><br/>[Software System]"]
-    Firebase["🔥<br/>Firebase<br/><br/>Servicio externo para base de datos y autenticación<br/><br/>[Software System]"]
-    Gemini["🤖<br/>Google Gemini API<br/><br/>Servicio externo de inteligencia artificial<br/><br/>[Software System]"]
+    U["👤<br/>Usuario de Finanzas Personales<br/><br/>Persona que interactúa con la aplicación<br/><br/>[Person]"]
+    S["📱<br/>Sistema Principal<br/><br/>Aplicación móvil desarrollada en Flutter<br/><br/>[Software System]"]
+    FB["🔥<br/>Firebase<br/><br/>Servicio externo para base de datos y autenticación<br/><br/>[Software System]"]
+    GEMINI["🤖<br/>Google Gemini API<br/><br/>Servicio externo de inteligencia artificial<br/><br/>[Software System]"]
 
     %% ==== Relaciones ====
-    Usuario -->|"Registra transacciones,<br/>visualiza reportes y recibe recomendaciones"| Sistema
-    Sistema -->|"Almacena datos financieros<br/>y realiza autenticación de usuarios"| Firebase
-    Sistema -->|"Clasifica transacciones<br/>y genera insights personalizados"| Gemini
+    U -->|"Registra transacciones,<br/>visualiza reportes y recibe recomendaciones"| S
+    S -->|"Almacena datos financieros<br/>y realiza autenticación de usuarios"| FB
+    S -->|"Clasifica transacciones<br/>y genera insights personalizados"| GEMINI
 
-    %% ==== Estilos visuales ====
-    classDef userClass fill:#f4b400,stroke:#d97706,stroke-width:3px,color:#000000,font-weight:bold
-    classDef systemClass fill:#ffffff,stroke:#3b82f6,stroke-width:3px,color:#007acc,font-weight:bold
-    classDef externalClass fill:#ffffff,stroke:#3b82f6,stroke-width:3px,color:#007acc,font-weight:bold
-    classDef background fill:#0f172a,stroke:none,color:#ffffff
+    %% ==== Estilos visuales (fiel al Structurizr original) ====
+    classDef person fill:#f4b400,stroke:#f4b400,stroke-width:6px,color:#000000,font-weight:bold,stroke-dasharray:none
+    classDef system fill:#ffffff,stroke:#007acc,stroke-width:6px,color:#007acc,font-weight:bold,stroke-dasharray:none
 
-    %% ==== Aplicar clases ====
-    class Usuario userClass
-    class Sistema systemClass
-    class Firebase,Gemini externalClass
+    %% ==== Asignación de estilos ====
+    class U person
+    class S,FB,GEMINI system
+
 
 ## Descripción
 
