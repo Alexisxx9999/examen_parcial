@@ -2,32 +2,28 @@
 
 Este diagrama muestra la interacción entre el usuario y el sistema principal, así como las dependencias externas.
 
-```mermaid
 graph LR
-    %% Usuarios del Sistema
-    Usuario["👤<br/>Usuario de Finanzas<br/>Personales<br/><br/>[Person]"]
-    
-    %% Sistema Principal
-    Sistema["📱<br/>Gestor de Finanzas<br/>Personales Asistido por IA<br/><br/>[Software System]"]
-    
-    %% Sistemas Externos
-    Firebase["🔥<br/>Firebase<br/>Base de Datos y<br/>Autenticación<br/><br/>[External System]"]
-    Gemini["🤖<br/>Google Gemini API<br/>Procesamiento<br/>de IA<br/><br/>[External System]"]
-    
-    %% Interacciones
-    Usuario -.->|"Registra transacciones<br/>Visualiza reportes<br/>Recibe recomendaciones"| Sistema
-    Sistema -.->|"Almacena datos<br/>financieros<br/>Autentica usuarios"| Firebase
-    Sistema -.->|"Clasifica transacciones<br/>Genera insights<br/>personalizados"| Gemini
-    
-    %% Estilos profesionales
-    classDef userClass fill:#1e3a8a,stroke:#3b82f6,stroke-width:3px,color:#ffffff,font-weight:bold
-    classDef systemClass fill:#7c3aed,stroke:#a855f7,stroke-width:3px,color:#ffffff,font-weight:bold
-    classDef externalClass fill:#dc2626,stroke:#ef4444,stroke-width:3px,color:#ffffff,font-weight:bold
-    
+    %% ==== Elementos ====
+    Usuario["👤<br/>Usuario de Finanzas Personales<br/><br/>Persona que interactúa con la aplicación<br/><br/>[Person]"]
+    Sistema["📱<br/>Sistema Principal<br/><br/>Aplicación móvil desarrollada en Flutter<br/><br/>[Software System]"]
+    Firebase["🔥<br/>Firebase<br/><br/>Servicio externo para base de datos y autenticación<br/><br/>[Software System]"]
+    Gemini["🤖<br/>Google Gemini API<br/><br/>Servicio externo de inteligencia artificial<br/><br/>[Software System]"]
+
+    %% ==== Relaciones ====
+    Usuario -->|"Registra transacciones,<br/>visualiza reportes y recibe recomendaciones"| Sistema
+    Sistema -->|"Almacena datos financieros<br/>y realiza autenticación de usuarios"| Firebase
+    Sistema -->|"Clasifica transacciones<br/>y genera insights personalizados"| Gemini
+
+    %% ==== Estilos visuales ====
+    classDef userClass fill:#f4b400,stroke:#d97706,stroke-width:3px,color:#000000,font-weight:bold
+    classDef systemClass fill:#ffffff,stroke:#3b82f6,stroke-width:3px,color:#007acc,font-weight:bold
+    classDef externalClass fill:#ffffff,stroke:#3b82f6,stroke-width:3px,color:#007acc,font-weight:bold
+    classDef background fill:#0f172a,stroke:none,color:#ffffff
+
+    %% ==== Aplicar clases ====
     class Usuario userClass
     class Sistema systemClass
     class Firebase,Gemini externalClass
-```
 
 ## Descripción
 
